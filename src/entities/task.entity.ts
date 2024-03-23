@@ -25,4 +25,10 @@ export class Task {
 
     @UpdateDateColumn({ name: "updated_at" })
     updatedAt: Date;
+
+    @ManyToOne(() => User, {
+        cascade: true,
+    })
+    @JoinColumn({ name: "user_id" })
+    user: User;
 }
