@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { Task } from "../entities/task.entity";
 import { CreateTaskDto, TaskDto, UpdateTaskDto } from "../libs/types/task.type";
 import { DataSource } from "typeorm";
-import { NotFoundError } from "../errors/not-found.error";
+import { NotFoundError } from "../libs/errors/not-found.error";
 
 export class TaskService {
 

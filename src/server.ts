@@ -4,8 +4,8 @@ import "express-async-errors";
 import { dbConnection } from './config/db.config';
 import { TaskController } from './controllers/task.controller';
 import { TaskService } from './services/task.service';
-import { errorHandler } from './middleware/error-handler.middleware';
-import { NotFoundError } from './errors/not-found.error';
+import { errorHandler } from './libs/middleware/error-handler.middleware';
+import { NotFoundError } from './libs/errors/not-found.error';
 
 const app = express();
 const port = process.env.PORT;
