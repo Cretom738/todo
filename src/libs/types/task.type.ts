@@ -5,31 +5,29 @@ export enum ETaskStatus {
     COMPLETED = "Completed"
 }
 
-export class TaskCreateDto {
+export class CreateTaskDto {
 
     title: string;
     description: string;
     status: ETaskStatus;
 
-    static [Symbol.hasInstance](dto: any): dto is TaskUpdateDto {
-        return dto.title != null
-            && dto.description != null
-            && dto.status != null
-            && Object.values(ETaskStatus).includes(dto.status ?? null);
+    constructor(title: string, description: string, status: ETaskStatus) {
+        this.title = title;
+        this.description = description;
+        this.status = status;
     }
 }
 
-export class TaskUpdateDto {
+export class UpdateTaskDto {
 
     title: string;
     description: string;
     status: ETaskStatus;
 
-    static [Symbol.hasInstance](dto: any): dto is TaskCreateDto {
-        return dto.title != null
-            && dto.description != null
-            && dto.status != null
-            && Object.values(ETaskStatus).includes(dto.status ?? null);
+    constructor(title: string, description: string, status: ETaskStatus) {
+        this.title = title;
+        this.description = description;
+        this.status = status;
     }
 }
 

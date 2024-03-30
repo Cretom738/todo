@@ -1,7 +1,5 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
-import { Task } from "../entities/task.entity";
-import { User } from "../entities/user.entity";
 import { join } from "path";
 import "dotenv/config"
 

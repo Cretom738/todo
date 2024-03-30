@@ -1,9 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, CreateDateColumn, UpdateDateColumn } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, CreateDateColumn, UpdateDateColumn, BaseEntity } from "typeorm"
 import { ETaskStatus } from "../libs/types/task.type";
-import { User } from "./user.entity";
 
 @Entity("tasks")
-export class Task {
+export class Task extends BaseEntity {
 
     @PrimaryGeneratedColumn({ type: "int" })
     id: number;
@@ -25,16 +24,4 @@ export class Task {
 
     @UpdateDateColumn({ name: "updated_at" })
     updatedAt: Date;
-
-    @Column({ 
-        name: "user_id",
-        type: "int"
-    })
-    userId: number;
-
-    @ManyToOne(() => User, {
-        cascade: true,
-    })
-    @JoinColumn({ name: "user_id" })
-    user: User;
 }

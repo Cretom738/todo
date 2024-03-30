@@ -7,10 +7,11 @@
   "scripts": {
     "start": "ts-node src/server.ts",
     "start:dev": "nodemon src/server.ts",
-    "db:migration:generate": "typeorm-ts-node-esm migration:generate -d ./src/config/db.config.ts -p "
+    "db:migration:generate": "npx typeorm-ts-node-commonjs migration:generate -d ./src/config/orm.config.ts -p "
   },
   "dependencies": {
     "express": "^4.18.3",
+    "express-async-errors": "^3.1.1",
     "nodemon": "^3.1.0",
     "pg": "^8.11.3",
     "reflect-metadata": "^0.2.1",
